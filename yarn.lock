@@ -131,7 +131,7 @@
     "@babel/types" "^7.18.7"
     "@jridgewell/gen-mapping" "^0.3.2"
     jsesc "^2.5.1"
-
+yarn run dev
 "@babel/generator@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.5.5.tgz#873a7f936a3c89491b43536d12245b626664e3cf"

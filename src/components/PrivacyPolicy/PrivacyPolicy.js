@@ -11,7 +11,7 @@ const PrivacyPolicy = props => {
   // prettier-ignore
   return (
     <div className={classes}>
-      <p className={css.lastUpdated}>Last updated: July 1st, 2021</p>
+      <p className={css.lastUpdated}>Updated at 2021-08-10</p>
 
       <p>
         Thank you for using Sneakertime! Ut enim ad minim veniam, quis nostrud exercitation ullamco

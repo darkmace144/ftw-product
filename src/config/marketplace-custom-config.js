@@ -49,9 +49,16 @@ export const filters = [
       // Note: label is not added through the translation files
       // to make filter customizations a bit easier.
       options: [
-        { key: 'men', label: 'Men' },
-        { key: 'women', label: 'Women' },
-        { key: 'kids', label: 'Kids' },
+        { key: 'ram', label: 'RAM' },
+        { key: 'cpu', label: 'CPU' },
+        { key: 'gpu', label: 'GPU' },
+        { key: 'customBuild', label: 'Custom Builds' },
+        { key: 'monitors', label: 'Monitors' },
+        { key: 'cases', label: 'Cases' },
+        { key: 'consoles', label: 'Consoles' },
+        { key: 'powerSupplies', label: 'Power Supplies' },
+        { key: 'peripherals', label: 'Peripherals' },
+        { key: 'other', label: 'Other' },
       ],
     },
   },

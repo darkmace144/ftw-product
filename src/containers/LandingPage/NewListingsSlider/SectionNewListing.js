@@ -7,13 +7,9 @@ import { lazyLoadWithDimensions } from '../../../util/contextHelpers';
 
 import { NamedLink } from '../../../components';
 
-import css from './SectionFilteredSearches.module.css';
+import css from './SectionNewListing.module.css';
+const sharetribeIntegrationSdk = require('sharetribe-flex-integration-sdk');
 
-// Update images by saving images to src/LandingPage/SeactionFilteredSearches/images directory.
-// If those images have been saved with the same name, no need to make changes to these imports.
-import imageForFilter1 from './images/imageForFilter1_648x448.jpg';
-import imageForFilter2 from './images/imageForFilter2_648x448.jpg';
-import imageForFilter3 from './images/imageForFilter3_648x448.jpg';
 
 // Thumbnail image for the search "card"
 class ThumbnailImage extends Component {
@@ -50,7 +46,7 @@ const FilterLink = props => {
 
 // Component that shows full-width section on LandingPage.
 // Inside it shows 3 "cards" that link to SearchPage with specific filters applied.
-const SectionFilteredSearches = props => {
+const SectionNewListing = props => {
   const { rootClassName, className } = props;
   const classes = classNames(rootClassName || css.root, className);
 
@@ -62,27 +58,27 @@ const SectionFilteredSearches = props => {
   return (
     <div className={classes}>
       <div className={css.title}>
-        <FormattedMessage id="SectionFilteredSearches.title" />
+        <FormattedMessage id="SectionNewListing.title" />
       </div>
       <div className={css.filteredSearches}>
         <FilterLink
           name="CPUs"
-          image={imageForFilter1}
-          link="http://localhost:3000/s?pub_brand=cpu"
+          image={"https://images.unsplash.com/photo-1666330404750-061d4858593b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80"}
+          link="http://localhost:3000/s?pub_brand=nike"
         />
         <FilterLink
           name="GPUs"
-          image={imageForFilter2}
+          image={"https://images.unsplash.com/photo-1666330404750-061d4858593b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80"}
           link="http://localhost:3000/s?pub_brand=yeezy"
         />
         <FilterLink
           name="Custom Builds"
-          image={imageForFilter3}
+          image={"https://images.unsplash.com/photo-1666330404750-061d4858593b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80"}
           link="http://localhost:3000/s?pub_brand=converse"
         />
           <FilterLink
-          name="Consoles"
-          image={imageForFilter3}
+          name="Consoles222"
+          image={"https://images.unsplash.com/photo-1666330404750-061d4858593b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80"}
           link="http://localhost:3000/s?pub_brand=converse"
         />
       </div>
@@ -90,11 +86,11 @@ const SectionFilteredSearches = props => {
   );
 };
 
-SectionFilteredSearches.defaultProps = { rootClassName: null, className: null };
+SectionNewListing.defaultProps = { rootClassName: null, className: null };
 
-SectionFilteredSearches.propTypes = {
+SectionNewListing.propTypes = {
   rootClassName: string,
   className: string,
 };
 
-export default SectionFilteredSearches;
+export default SectionNewListing;
