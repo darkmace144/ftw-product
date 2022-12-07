@@ -32,8 +32,6 @@
   composes: defaultBackgroundImage from global;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
 
   @media (--viewportLarge) {
     border-radius: 40px;
@@ -43,7 +41,12 @@
 
 .heroContent {
   margin: 0 24px 0 24px;
-
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
   @media (--viewportMedium) {
     margin: 0 7.5vw 0 7.5vw;
   }

@@ -65,7 +65,6 @@ export const ListingCardComponent = props => {
   const variants = firstImage
     ? Object.keys(firstImage?.attributes?.variants).filter(k => k.startsWith(variantPrefix))
     : [];
-
   const { formattedPrice, priceTitle } = priceData(price, intl);
   const unitType = config.lineItemUnitType;
   const isNightly = unitType === LINE_ITEM_NIGHT;
@@ -83,6 +82,7 @@ export const ListingCardComponent = props => {
         onMouseLeave: () => setActiveListing(null),
       }
     : null;
+    console.log(firstImage);
 
   return (
     <NamedLink className={classes} name="ListingPage" params={{ id, slug }}>
@@ -146,7 +146,6 @@ ListingCardComponent.propTypes = {
 
   // Responsive image sizes hint
   renderSizes: string,
-
   setActiveListing: func,
 };
 

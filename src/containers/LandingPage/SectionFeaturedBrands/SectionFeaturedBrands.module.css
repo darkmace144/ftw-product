@@ -1,0 +1,115 @@
+@import '../../../styles/customMediaQueries.css';
+
+.title {
+  composes: h1 from global;
+
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.filteredSearches {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0px;
+
+  @media (--viewportMedium) {
+    flex-direction: row;
+    margin-top: 33px;
+  }
+}
+
+.searchLink {
+  width: 200px;
+  height: 8rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  margin-right: 25px;
+  border-radius: 0.5rem;
+}
+
+/* A wrapper for a responsive image that holds it's aspect ratio */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* An image wrapper that defines the images aspect ratio */
+.aspectWrapper {
+  padding-bottom: calc(6 / 13 * 100%); /* 13:6 Aspect Ratio */
+
+  @media (--viewportMedium) {
+    padding-bottom: calc(2 / 3 * 100%); /* 3:2 Aspect Ratio */
+  }
+}
+
+.slideshow {
+  display: flex;
+  width: calc(200px * 14);
+  animation: scroll 40s linear infinite;
+  margin-bottom: 1rem;
+}
+.slideshow:hover {
+  animation-play-state: paused;
+}
+
+.slideshowTwo {
+  display: flex;
+  width: calc(200px * 14);
+  animation: scrollTwo 20s linear infinite;
+  margin-bottom: 1rem;
+}
+.slideshowTwo:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-200px * 7));
+  }
+}
+@keyframes scrollTwo {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(calc(-200px * 7));
+  }
+}
+
+.wrapper {
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.searchImage {
+  /* Layout - image will take space defined by aspect ratio wrapper */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: contain;
+}
+
+.linkText {
+  color: #fff;
+  margin-top: 15px;
+  margin-bottom: 0;
+
+  @media (--viewportMedium) {
+    margin-top: 21px;
+  }
+}
+
+.searchName {
+  color: var(--marketplaceColor);
+}

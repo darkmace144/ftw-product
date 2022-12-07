@@ -301,3 +301,25 @@ app.listen(PORT, () => {
     console.log(`Open http://localhost:${PORT}/ and start hacking!`);
   }
 });
+
+const sharetribeIntegrationSdk = require('sharetribe-flex-integration-sdk');
+
+// Create new SDK instance
+export const integrationSdk = sharetribeIntegrationSdk.createInstance({
+  clientId: process.env.FLEX_INTEGRATION_CLIENT_ID,
+  clientSecret: process.env.FLEX_INTEGRATION_CLIENT_SECRET
+});
+
+integrationSdk.listings
+  .query({ per_page: 5 })
+  .then(res => {
+    // Print listing titles
+    res.data.data.forEach(listing => {
+      console.log(`Listing: ${listing.attributes.title}`)
+    });
+  })
+  .catch(res => {
+    // An error occurred
+    console.log(`Request failed with status: ${res.status} ${res.statusText}`);
+  });
+

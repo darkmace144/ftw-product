@@ -1,42 +1,113 @@
 @import '../../../styles/customMediaQueries.css';
 
-.title {
-  composes: h1 from global;
-
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.listingCard {
-  width: 100%;
-}
-
-.filteredSearches {
+.root {
+  /* Layout */
   display: flex;
   flex-direction: column;
-  margin-top: 0px;
-
-  @media (--viewportMedium) {
-    flex-direction: row;
-    margin-top: 33px;
-  }
-}
-
-.searchLink {
-  width: 100%;
-  margin-top: 25px;
 
   /* Remove link's hover effect */
   &:hover {
     text-decoration: none;
   }
 }
+.title {
+  composes: h1 from global;
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
-@media (--viewportMedium) {
+.filteredSearches {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  justify-content: center;
+
+  @media (--viewportLarge) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 33px;
+  }
+}
+.icon {
+  margin-left: 10px;
+}
+.viewmore {
+  display: flex;
+  algin-items: center;
+  text-align: center;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.viewMoreLink {
+  border-bottom: 0px solid;
+  transition: var(--transitionStyleButton);
+  flex-shrink: 0;
+  height: 100%;
+  padding: 0 12px 0 12px;
+
+  color: var(--matterColor);
+
+  &:hover {
+    color: var(--matterColorDark);
+    border-bottom: 4px solid var(--marketplaceColor);
+    border-radius: 0;
+    text-decoration: none;
+  }
+}
+
+.titleWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchLink {
+  position: relative;
+  width: 200px;
+  min-width: 200px;
+  height: 350px;
+}
+
+.priceValue {
+  /* Font */
+  composes: h3 from global;
+  color: lightgreen;
+  /* Remove default margins from font */
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.authorInfo {
+  /* Font */
+  composes: marketplaceTinyFontStyles from global;
+  color: var(--matterColor);
+  padding-top: 4px;
+  padding-bottom: 4px;
+
+  /* Remove default margins from font */
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media (--viewportLarge) {
   .searchLink {
     margin-top: 0;
     margin-right: 40px;
     margin-bottom: 0;
+    width: 100%;
 
     &:last-of-type {
       margin-right: 0;
@@ -48,13 +119,11 @@
 .imageWrapper {
   position: relative;
   width: 100%;
+  height: 80%;
   border-radius: 15px;
-  transition: var(--transitionStyleButton);
-
-  &:hover {
-    transform: scale(1.02);
-    box-shadow: var(--boxShadowSectionLocationHover);
-  }
+  border: solid 1px var(--matterColorNegative);
+  overflow: hidden;
+  border-radius: 20px;
 }
 
 /* An image wrapper that defines the images aspect ratio */
@@ -66,30 +135,39 @@
   }
 }
 
-.searchImage {
-  /* Layout - image will take space defined by aspect ratio wrapper */
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.rootForImage {
+  border: solid 1px var(--matterColorNegative);
+  border-radius: 4px;
   width: 100%;
   height: 100%;
-  border-radius: 15px;
-  object-fit: cover;
+}
+
+.searchImage {
+  /* Layout - image will take space defined by aspect ratio wrapper */
+  height: 100%;
 }
 
 .linkText {
-  composes: h2 from global;
-  color: var(--matterColor);
-  margin-top: 15px;
+  position: absolute;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  bottom: 4%;
+  padding: 10px;
+  margin-top: 0;
   margin-bottom: 0;
-
-  @media (--viewportMedium) {
-    margin-top: 21px;
-  }
+  text-overflow: ellipsis;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  background-color: white;
+  border-radius: 20px;
 }
-
 .searchName {
-  color: var(--marketplaceColor);
+  composes: h3 from global;
+  white-space: nowrap;
+  textmargin-top: 0;
+  margin-bottom: 0;
 }

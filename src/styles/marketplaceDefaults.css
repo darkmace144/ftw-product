@@ -68,7 +68,7 @@
   --boxShadowButton: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   --boxShadowListingCard: 0 0 50px 0 rgba(0, 0, 0, 0.1);
   --boxShadowNotFoundPageSearch: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-  --boxShadowSectionLocationHover: 0 10px 30px 0 rgba(0, 0, 0, 0.1);
+  --boxShadowSectionLocationHover: 0 10px 30px 0 rgba(24, 90, 219, 0.3);
   --boxShadowBottomForm: 0 -2px 4px 0 rgba(0, 0, 0, 0.05);
   --boxShadowFilterButton: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
 
@@ -526,7 +526,7 @@ textarea {
 
   @media (--viewportLarge) {
     border-radius: 40px;
-    border: solid 36px var(--matterColorBright);
+    width: 100%;
   }
 }
 

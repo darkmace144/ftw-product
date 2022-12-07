@@ -10,8 +10,8 @@
   display: flex;
   flex-direction: column;
   min-height: 300px;
-  height: 67.5vh;
-  max-height: 600px;
+  height: 98vh;
+  max-height: 1021px;
   padding: 0;
 
   @media (--viewportMedium) {
@@ -21,9 +21,9 @@
   }
 
   @media (--viewportLarge) {
-    max-height: 800px;
+    max-height: 883px;
     min-height: 600px;
-    height: calc(70vh - var(--topbarHeightDesktop));
+    height: calc(44vh - var(--topbarHeightDesktop));
   }
 }
 
@@ -31,7 +31,6 @@
   composes: defaultBackgroundImage from global;
   display: flex;
   flex-direction: column;
-  width: 100%;
   height: 100%;
 }
 
@@ -39,14 +38,21 @@
   flex-grow: 1;
   justify-content: flex-end;
   padding-bottom: 32px;
+  margin: var(--LandingPage_sectionMarginTop) 24px 51px 24px;
 
   @media (--viewportMedium) {
-    padding-bottom: 83px;
+    max-width: 100%;
+    margin: var(--LandingPage_sectionMarginTopMedium) 24px 60px 24px;
   }
 
   @media (--viewportLarge) {
-    justify-content: center;
-    padding-top: 60px;
+    max-width: 1238px;
+    padding: 0 36px 0 36px;
+    margin: 50px auto 48px auto;
+  }
+  @media (--viewportXLarge) {
+    max-width: 1400px;
+    padding: 0;
   }
 }
 
@@ -96,7 +102,7 @@
 
 .sectionContentFirstChild {
   composes: sectionContent;
-  margin-top: 3vh;
+  margin-top: 8vh;
 }
 
 /* A bar on top of light sections */

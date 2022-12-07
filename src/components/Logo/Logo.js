@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import config from '../../config';
-import LogoImageMobile from './sneakertime-logo-mobile.png';
+import LogoImageMobile from './IconLogo.png';
 import LogoImage from './PCIFIC_LOGO.png';
 
 const Logo = props => {

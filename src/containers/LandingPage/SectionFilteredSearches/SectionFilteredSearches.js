@@ -11,9 +11,10 @@ import css from './SectionFilteredSearches.module.css';
 
 // Update images by saving images to src/LandingPage/SeactionFilteredSearches/images directory.
 // If those images have been saved with the same name, no need to make changes to these imports.
-import imageForFilter1 from './images/imageForFilter1_648x448.jpg';
-import imageForFilter2 from './images/imageForFilter2_648x448.jpg';
-import imageForFilter3 from './images/imageForFilter3_648x448.jpg';
+import Consoles from './images/Consoles.png';
+import CPU from './images/CPUs.png';
+import Custom_Builds from './images/Custom_Builds.png';
+import Graphic_Card from './images/Graphic_Cards.png';
 
 // Thumbnail image for the search "card"
 class ThumbnailImage extends Component {
@@ -22,20 +23,21 @@ class ThumbnailImage extends Component {
     return <img alt={alt} {...rest} />;
   }
 }
+
 // Load the image only if it's close to viewport (user has scrolled the page enough).
 const LazyImage = lazyLoadWithDimensions(ThumbnailImage);
 
 // Create a "card" that contains a link to filtered search on SearchPage.
 const FilterLink = props => {
-  const { name, image, link } = props;
+  const { name, image, link, imageClassName, wrapperClassName } = props;
   const url = typeof window !== 'undefined' ? new window.URL(link) : new global.URL(link);
   const searchQuery = url.search;
   const nameText = <span className={css.searchName}>{name}</span>;
   return (
     <NamedLink name="SearchPage" to={{ search: searchQuery }} className={css.searchLink}>
-      <div className={css.imageWrapper}>
+      <div className={wrapperClassName}>
         <div className={css.aspectWrapper}>
-          <LazyImage src={image} alt={name} className={css.searchImage} />
+          <LazyImage src={image} alt={name} className={imageClassName} />
         </div>
       </div>
       <div className={css.linkText}>
@@ -67,23 +69,45 @@ const SectionFilteredSearches = props => {
       <div className={css.filteredSearches}>
         <FilterLink
           name="CPUs"
-          image={imageForFilter1}
+          image={CPU}
           link="http://localhost:3000/s?pub_brand=cpu"
+          imageClassName={css.searchImageOne}
+          wrapperClassName={css.ImageWrapperOne}
         />
         <FilterLink
-          name="GPUs"
-          image={imageForFilter2}
-          link="http://localhost:3000/s?pub_brand=yeezy"
+          name="Graphic Cards"
+          image={Graphic_Card}
+          link="http://localhost:3000/s?pub_category=gpu"
+          imageClassName={css.searchImageTwo}
+          wrapperClassName={css.ImageWrapperTwo}
         />
         <FilterLink
           name="Custom Builds"
-          image={imageForFilter3}
-          link="http://localhost:3000/s?pub_brand=converse"
+          image={Custom_Builds}
+          link="http://localhost:3000/s?pub_category=custom-builds"
+          imageClassName={css.searchImageThree}
+          wrapperClassName={css.ImageWrapper}
         />
-          <FilterLink
+        <FilterLink
           name="Consoles"
-          image={imageForFilter3}
-          link="http://localhost:3000/s?pub_brand=converse"
+          image={Consoles}
+          link="http://localhost:3000/s?pub_category=consoles"
+          imageClassName={css.searchImageFour}
+          wrapperClassName={css.ImageWrapperThree}
+        />
+        <FilterLink
+          name="Consoles"
+          image={Consoles}
+          link="http://localhost:3000/s?pub_category=consoles"
+          imageClassName={css.searchImage}
+          wrapperClassName={css.ImageWrapper}
+        />
+        <FilterLink
+          name="Consoles"
+          image={Consoles}
+          link="http://localhost:3000/s?pub_category=consoles"
+          imageClassName={css.searchImage}
+          wrapperClassName={css.ImageWrapper}
         />
       </div>
     </div>
